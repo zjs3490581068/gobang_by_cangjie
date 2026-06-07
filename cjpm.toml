@@ -1,0 +1,13 @@
+[package]
+  cjc-version = "1.0.5"
+  name = "gomoku"
+  description = "A Cangjie-powered web Gomoku game with local, AI, and LAN modes."
+  version = "1.0.0"
+  target-dir = ""
+  output-type = "executable"
+  compile-option = ""
+  override-compile-option = ""
+  link-option = ""
+  package-configuration = {}
+
+[dependencies]

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>仓颉五子棋</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="play-area">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Cangjie Gomoku</p>
+            <h1>仓颉五子棋</h1>
+          </div>
+          <div class="status-pill" id="turnBadge">黑棋先手</div>
+        </div>
+
+        <div class="board-wrap">
+          <div class="board" id="board" aria-label="五子棋棋盘"></div>
+          <div class="game-over hidden" id="gameOver" aria-live="polite">
+            <div class="game-over-box">
+              <p class="game-over-label">本局结束</p>
+              <h2 id="gameOverTitle">黑棋获胜</h2>
+              <p id="gameOverText">点击重新开始进入下一局。</p>
+              <button id="gameOverRestartBtn">再来一局</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="status-line" id="statusLine">请选择模式开始对弈。</p>
+      </section>
+
+      <aside class="control-panel">
+        <div class="mode-tabs" role="tablist" aria-label="游戏模式">
+          <button class="mode-btn active" data-mode="local">本地双人</button>
+          <button class="mode-btn" data-mode="ai">人机对战</button>
+          <button class="mode-btn" data-mode="online">局域网</button>
+        </div>
+
+        <div class="panel-section">
+          <h2 id="modeTitle">本地双人</h2>
+          <p id="modeSubtitle">同一台设备轮流落子，黑棋先手。</p>
+        </div>
+
+        <div class="panel-section online-panel hidden" id="onlinePanel">
+          <label class="field-label" for="roomInput">房间号</label>
+          <div class="inline-controls">
+            <input id="roomInput" type="text" inputmode="numeric" placeholder="例如 1001" />
+            <button id="joinRoomBtn">加入</button>
+          </div>
+          <div class="inline-controls">
+            <button id="createRoomBtn">创建房间</button>
+            <button id="copyRoomBtn">复制房间号</button>
+          </div>
+          <div class="room-card" id="roomInfo">尚未进入房间</div>
+        </div>
+
+        <div class="panel-section actions">
+          <button id="restartBtn">重新开始</button>
+          <button id="undoBtn">悔棋</button>
+        </div>
+
+        <div class="panel-section legend">
+          <div><span class="dot black"></span>黑棋</div>
+          <div><span class="dot white"></span>白棋</div>
+        </div>
+      </aside>
+    </main>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
